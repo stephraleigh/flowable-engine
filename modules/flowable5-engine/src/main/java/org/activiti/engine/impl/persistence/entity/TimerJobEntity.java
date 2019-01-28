@@ -341,7 +341,7 @@ public class TimerJobEntity extends AbstractJobEntity {
                 .getProcessEngineConfiguration()
                 .getBusinessCalendarManager()
                 .getBusinessCalendar(getBusinessCalendarName(TimerEventHandler.geCalendarNameFromConfiguration(jobHandlerConfiguration)));
-        return businessCalendar.resolveDuedate(repeat, maxIterations);
+        return businessCalendar.resolveDuedate(repeat, executionId, maxIterations);
     }
 
     protected String getBusinessCalendarName(String calendarName) {

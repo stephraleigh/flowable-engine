@@ -89,10 +89,10 @@ public class TimerEventListenerActivityBehaviour extends CoreCmmnActivityBehavio
 
                 BusinessCalendarManager businessCalendarManager = CommandContextUtil.getCmmnEngineConfiguration(commandContext).getBusinessCalendarManager();
                 if (isDurationString(timerString)) {
-                    timerDueDate = businessCalendarManager.getBusinessCalendar(DueDateBusinessCalendar.NAME).resolveDuedate(timerString);
+                    timerDueDate = businessCalendarManager.getBusinessCalendar(DueDateBusinessCalendar.NAME).resolveDuedate(timerString, null);
 
                 } else if (isRepetitionString(timerString)) {
-                    timerDueDate = businessCalendarManager.getBusinessCalendar(CycleBusinessCalendar.NAME).resolveDuedate(timerString);
+                    timerDueDate = businessCalendarManager.getBusinessCalendar(CycleBusinessCalendar.NAME).resolveDuedate(timerString, null);
                     isRepeating = true;
 
                 } else {
@@ -104,7 +104,7 @@ public class TimerEventListenerActivityBehaviour extends CoreCmmnActivityBehavio
 
                     // Try to parse as cron expression
                     try {
-                        timerDueDate = businessCalendarManager.getBusinessCalendar(CycleBusinessCalendar.NAME).resolveDuedate(timerString);
+                        timerDueDate = businessCalendarManager.getBusinessCalendar(CycleBusinessCalendar.NAME).resolveDuedate(timerString, null);
                         isRepeating = true;
 
                     } catch (Exception pe) { }

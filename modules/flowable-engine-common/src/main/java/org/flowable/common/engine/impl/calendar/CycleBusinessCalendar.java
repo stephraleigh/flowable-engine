@@ -26,7 +26,7 @@ public class CycleBusinessCalendar extends BusinessCalendarImpl {
     }
 
     @Override
-    public Date resolveDuedate(String duedateDescription, int maxIterations) {
+    public Date resolveDuedate(String duedateDescription, String executionId, int maxIterations) {
         try {
             if (duedateDescription != null && duedateDescription.startsWith("R")) {
                 return new DurationHelper(duedateDescription, maxIterations, clockReader).getDateAfter();

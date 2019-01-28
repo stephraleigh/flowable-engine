@@ -26,7 +26,7 @@ public class AdvancedSchedulerResolverWithoutTimeZone implements AdvancedSchedul
 
     @Override
     public Date resolve(String duedateDescription, ClockReader clockReader, TimeZone timeZone) {
-        return new CycleBusinessCalendar(clockReader).resolveDuedate(duedateDescription);
+        return new CycleBusinessCalendar(clockReader).resolveDuedate(duedateDescription, null);
     }
 
 }

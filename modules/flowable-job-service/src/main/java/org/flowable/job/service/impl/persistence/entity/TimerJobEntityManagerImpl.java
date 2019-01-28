@@ -197,7 +197,7 @@ public class TimerJobEntityManagerImpl extends AbstractEntityManager<TimerJobEnt
     protected Date calculateNextTimer(JobEntity timerEntity, VariableScope variableScope) {
         BusinessCalendar businessCalendar = getJobServiceConfiguration().getBusinessCalendarManager().getBusinessCalendar(
                         getJobServiceConfiguration().getJobManager().getBusinessCalendarName(timerEntity, variableScope));
-        return businessCalendar.resolveDuedate(timerEntity.getRepeat(), timerEntity.getMaxIterations());
+        return businessCalendar.resolveDuedate(timerEntity.getRepeat(), timerEntity.getExecutionId(), timerEntity.getMaxIterations());
     }
 
     protected int calculateRepeatValue(JobEntity timerEntity) {

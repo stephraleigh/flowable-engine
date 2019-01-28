@@ -171,7 +171,7 @@ public class TimerDeclarationImpl implements Serializable {
         }
 
         if (duedate == null && dueDateString != null) {
-            duedate = businessCalendar.resolveDuedate(dueDateString);
+            duedate = businessCalendar.resolveDuedate(dueDateString, null);
         }
 
         TimerJobEntity timer = null;

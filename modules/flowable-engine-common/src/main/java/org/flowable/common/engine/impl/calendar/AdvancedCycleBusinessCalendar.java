@@ -90,7 +90,7 @@ public class AdvancedCycleBusinessCalendar extends CycleBusinessCalendar {
     }
 
     @Override
-    public Date resolveDuedate(String duedateDescription, int maxIterations) {
+    public Date resolveDuedate(String duedateDescription, String executionId, int maxIterations) {
         LOGGER.info("Resolving Due Date: {}", duedateDescription);
 
         String timeZone = getValueFrom("DSTZONE", duedateDescription);

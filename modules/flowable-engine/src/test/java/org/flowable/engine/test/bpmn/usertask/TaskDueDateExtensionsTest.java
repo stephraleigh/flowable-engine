@@ -111,12 +111,12 @@ public class TaskDueDateExtensionsTest extends ResourceFlowableTestCase {
     public static class CustomBusinessCalendar implements BusinessCalendar {
 
         @Override
-        public Date resolveDuedate(String duedateDescription) {
+        public Date resolveDuedate(String duedateDescription, String executionId) {
             return new Date(0);
         }
 
         @Override
-        public Date resolveDuedate(String duedateDescription, int maxIterations) {
+        public Date resolveDuedate(String duedateDescription, String executionId, int maxIterations) {
             return new Date(0);
         }
 

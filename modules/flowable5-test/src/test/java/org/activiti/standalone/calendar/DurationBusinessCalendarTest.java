@@ -34,7 +34,7 @@ public class DurationBusinessCalendarTest extends PvmTestCase {
         Date now = simpleDateFormat.parse("2010 06 11 - 17:23");
         testingClock.setCurrentTime(now);
 
-        Date duedate = businessCalendar.resolveDuedate("P2DT5H70M");
+        Date duedate = businessCalendar.resolveDuedate("P2DT5H70M", null);
 
         Date expectedDuedate = simpleDateFormat.parse("2010 06 13 - 23:33");
 

@@ -31,7 +31,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20131103-04:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20131104-05:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("R2/2013-11-03T00:00:00-04:00/P1D DSTZONE:US/Eastern"));
+        assertEquals(parseCalendar("20131104-05:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.6.5.1-SNAPSHOT("R2/2013-11-03T00:00:00-04:00/P1D DSTZONE:US/Eastern", null));
     }
 
     public void testDaylightSavingSpringIso() throws Exception {
@@ -39,7 +39,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20140309-05:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20140310-04:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("R2/2014-03-09T00:00:00-05:00/P1D DSTZONE:US/Eastern"));
+        assertEquals(parseCalendar("20140310-04:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("R2/2014-03-09T00:00:00-05:00/P1D DSTZONE:US/Eastern",null));
     }
 
     public void testIsoString() throws Exception {
@@ -47,7 +47,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20140310-04:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20140311-04:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("R2/2014-03-10T04:00:00/P1D DSTZONE:US/Eastern"));
+        assertEquals(parseCalendar("20140311-04:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("R2/2014-03-10T04:00:00/P1D DSTZONE:US/Eastern",null));
     }
 
     public void testLegacyIsoString() throws Exception {
@@ -55,7 +55,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20140310-04:00:00", TimeZone.getDefault()));
 
-        assertEquals(parseCalendar("20140311-00:00:00", TimeZone.getDefault()).getTime(), businessCalendar.resolveDuedate("R2/2014-03-10T00:00:00/P1D"));
+        assertEquals(parseCalendar("20140311-00:00:00", TimeZone.getDefault()).getTime(), businessCalendar.resolveDuedate("R2/2014-03-10T00:00:00/P1D",null));
     }
 
     public void testDaylightSavingFallCron() throws Exception {
@@ -63,7 +63,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20131103-04:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20131103-17:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? * DSTZONE:US/Eastern"));
+        assertEquals(parseCalendar("20131103-17:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? * DSTZONE:US/Eastern", null));
     }
 
     public void testDaylightSavingSpringCron() throws Exception {
@@ -71,7 +71,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20140309-05:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20140309-16:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? * DSTZONE:US/Eastern"));
+        assertEquals(parseCalendar("20140309-16:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? * DSTZONE:US/Eastern",null));
     }
 
     public void testCronString() throws Exception {
@@ -79,7 +79,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20140310-04:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20140310-16:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? * DSTZONE:US/Eastern"));
+        assertEquals(parseCalendar("20140310-16:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? * DSTZONE:US/Eastern",null));
     }
 
     public void testLegacyCronString() throws Exception {
@@ -87,7 +87,7 @@ public class AdvancedCycleBusinessCalendarTest extends PvmTestCase {
 
         testingClock.setCurrentCalendar(parseCalendar("20140310-04:00:00", TimeZone.getTimeZone("UTC")));
 
-        assertEquals(parseCalendar("20140310-12:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? *"));
+        assertEquals(parseCalendar("20140310-12:00:00", TimeZone.getTimeZone("UTC")).getTime(), businessCalendar.resolveDuedate("0 0 12 1/1 * ? *",null));
     }
 
     private Calendar parseCalendar(String str, TimeZone timeZone) throws Exception {

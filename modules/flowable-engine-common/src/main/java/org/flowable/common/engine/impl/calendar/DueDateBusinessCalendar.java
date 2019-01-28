@@ -28,7 +28,7 @@ public class DueDateBusinessCalendar extends BusinessCalendarImpl {
     }
 
     @Override
-    public Date resolveDuedate(String duedate, int maxIterations) {
+    public Date resolveDuedate(String duedate, String executionId, int maxIterations) {
         try {
             // check if due period was specified
             if (duedate.startsWith("P")) {

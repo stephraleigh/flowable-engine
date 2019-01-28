@@ -127,7 +127,7 @@ public class TimerUtil {
         }
 
         if (duedate == null && dueDateString != null) {
-            duedate = businessCalendar.resolveDuedate(dueDateString);
+            duedate = businessCalendar.resolveDuedate(dueDateString, executionEntity.getId());
         }
 
         TimerJobEntity timer = null;

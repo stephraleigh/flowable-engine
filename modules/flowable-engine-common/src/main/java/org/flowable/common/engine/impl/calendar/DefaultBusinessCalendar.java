@@ -46,12 +46,12 @@ public class DefaultBusinessCalendar implements BusinessCalendar {
     }
 
     @Override
-    public Date resolveDuedate(String duedateDescription, int maxIterations) {
-        return resolveDuedate(duedateDescription);
+    public Date resolveDuedate(String duedateDescription, String executionId, int maxIterations) {
+        return resolveDuedate(duedateDescription, executionId);
     }
 
     @Override
-    public Date resolveDuedate(String duedate) {
+    public Date resolveDuedate(String duedate, String executionId) {
         Date resolvedDuedate = Context.getCommandContext().getCurrentEngineConfiguration().getClock().getCurrentTime(); 
 
         String[] tokens = duedate.split(" and ");

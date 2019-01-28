@@ -33,7 +33,7 @@ public class CycleBusinessCalendarTest extends AbstractTestCase {
         Date now = simpleDateFormat.parse("2011 03 11 - 17:23");
         testingClock.setCurrentTime(now);
 
-        Date duedate = businessCalendar.resolveDuedate("0 0 0 1 * ?");
+        Date duedate = businessCalendar.resolveDuedate("0 0 0 1 * ?", null);
 
         Date expectedDuedate = simpleDateFormat.parse("2011 04 1 - 00:00");
 
@@ -49,7 +49,7 @@ public class CycleBusinessCalendarTest extends AbstractTestCase {
         Date now = simpleDateFormat.parse("2010 06 11 - 17:23");
         testingClock.setCurrentTime(now);
 
-        Date duedate = businessCalendar.resolveDuedate("R/P2DT5H70M");
+        Date duedate = businessCalendar.resolveDuedate("R/P2DT5H70M", null);
 
         Date expectedDuedate = simpleDateFormat.parse("2010 06 13 - 23:33");
 
